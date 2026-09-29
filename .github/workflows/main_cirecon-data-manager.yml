@@ -34,6 +34,9 @@ jobs:
         with:
           name: node-app
           path: .
+          # Next.js output (.next) and npm command shims (node_modules/.bin)
+          # are hidden directories required by `next start` on App Service.
+          include-hidden-files: true
 
   deploy:
     runs-on: ubuntu-latest
